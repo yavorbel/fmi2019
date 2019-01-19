@@ -1,0 +1,45 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+int countReads(char grid[30][30][101], int gridRows, int gridColumns, char sentence[90900])
+{
+	int count = 0;
+	cout << "Enter number of rows and columns" << endl;
+	cin >> gridRows >> gridColumns;
+	for (int i = 0;i < gridRows;i++)
+	{
+		for (int j = 0;j < gridColumns;j++)
+		{
+			cin.ignore();
+				cin.getline(grid[i][j],100);
+		}
+	}
+	int f = 0;
+	for (int i = 0;i < gridRows;i++)
+	{
+		
+		
+		
+		for (int j = 0;j < gridColumns;j++)
+		{
+			cout<<" ";
+			
+				while (grid[i][j][f] != '\0')
+				{
+					cout << grid[i][j][f];
+					f++;
+				}
+				f = 0;
+		}
+	}
+	return count;
+}
+
+int main()
+{
+	char grid[30][30][101];
+	int gridRows=0;
+	int gridColumns=0;
+	char sentence[90900];
+	cout << countReads(grid, gridRows, gridColumns, sentence);
+}
