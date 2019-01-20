@@ -1,0 +1,49 @@
+bool allRepeatedNumbers(unsigned int numbers[], unsigned int length)
+{
+	unsigned int storage[1000];
+	//Enter size of numbers[]
+	//do
+	//{
+	//	cin >> length;
+	//} while (length < 0 || length>1000);
+	//Enter numbers in the array
+	//for (unsigned int i = 0;i<length;i++)
+	//{
+	//	cin >> numbers[i];
+	//}
+  ////////////////////////////////////////
+	//Comparing
+	if (numbers[0] != 0)
+	{
+		return false;
+	}
+	for (unsigned int i = 1;i < length;i++)
+	{
+		if (numbers[i] % i != 0)
+		{
+			return false;
+		}
+	}
+	for (unsigned int i = 1;i < length;i++)
+	{
+		storage[i] = numbers[i]/i;
+	}
+	for (unsigned int i = 1;i < length;i++)
+	{
+		if (storage[i] > 10)
+		{
+			while (storage[i] != 0)
+			{
+				if (storage[i] % 10 == 0 || storage[i] % 10 == 1)
+				{ 
+				}
+				else
+				{
+					break;
+				}
+				storage[i] = storage[i] / 10;
+			}
+		}
+	}
+	return true;
+}
